@@ -90,7 +90,9 @@ Item {
       return []
     }
 
-    xhr.open('GET', RELEASES_URL)
+    console.log( "dave: before open")
+    xhr.open('GET', RELEASES_URL, true)
+    console.log( "dave: after open")
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         var resp = xhr.responseText
@@ -135,7 +137,9 @@ Item {
         }
       }
     }
+    console.log( "dave: before send")
     xhr.send()
+    console.log( "dave: after send")
 
     changelogBody.text = qsTr('Loading…')
   }
