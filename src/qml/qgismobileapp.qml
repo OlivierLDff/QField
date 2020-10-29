@@ -1548,8 +1548,7 @@ ApplicationWindow {
     parent: ApplicationWindow.overlay
 
     property var expireDate: new Date(2038,1,19)
-    visible: settings.value( "/QField/ChangelogVersion", "" ) !== versionCode
-               && expireDate > new Date()
+    visible: expireDate > new Date()
 
     x: 24
     y: 24
